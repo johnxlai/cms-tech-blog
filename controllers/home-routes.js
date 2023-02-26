@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+const { Blog, Painting } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
+    const dbBlogData = await Blog.findAll({
       include: [
         {
           model: Painting,
@@ -15,12 +15,12 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
+    const blogs = dbBlogData.map((singlePost) =>
+      singlePost.get({ plain: true })
     );
 
     res.render('homepage', {
-      galleries,
+      blogs,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
