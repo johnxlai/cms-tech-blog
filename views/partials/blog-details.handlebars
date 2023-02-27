@@ -1,13 +1,20 @@
-{{!-- <section class="card">
-  <a href="/gallery/{{id}}">
-    <header>{{name}}</header>
-    <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">
-  </a>
-</section> --}}
-
-<section class="card">
-  <a href="">
-    <header>test</header>
-  </a>
-
+<section class="mx-3">
+    <div class="flex justify-center">
+      <div class="flex flex-col rounded-lg bg-white shadow-lg dark:bg-neutral-700 md:max-w-xl md:flex-row">
+        <img class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+          src="https://picsum.photos/200/300" alt="" />
+        <div class="flex flex-col justify-start p-6">
+          <h5 class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
+            {{title}}
+          </h5>
+          <p>{{ post_by }}</p>
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            {{ post_content }}
+          </p>
+          <p class="text-xs text-neutral-500 dark:text-neutral-300">
+            {{ post_date}}
+          </p>
+        </div>
+      </div>
+    </div>
 </section>

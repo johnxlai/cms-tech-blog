@@ -106,14 +106,14 @@ img {
 }
 
 /* CARDS */
-.card {
+/* .card {
   margin: 20px;
   flex: 0 1 300px;
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--light);
   color: var(--dark);
-}
+} */
 
 .login-card {
   margin: 0 0 20px 0;
@@ -128,7 +128,7 @@ img {
   color: var(--light);
 }
 
-.card header {
+/* .card header {
   color: var(--light);
   font-weight: bold;
   text-transform: uppercase;
@@ -136,13 +136,13 @@ img {
   background-color: var(--tertiary);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
+} */
 
-.card-body {
+/* .card-body {
   font-size: 1.4rem;
   text-align: center;
   font-weight: bold;
-}
+} */
 
 .gallery-name {
   text-transform: uppercase;
