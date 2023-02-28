@@ -30,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/johnxlai/cms-tech-blog/issues"
   },
-  "homepage": "https://github.com/johnxlai/cms-tech-blog#readme"
+  "homepage": "https://github.com/johnxlai/cms-tech-blog#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
 }

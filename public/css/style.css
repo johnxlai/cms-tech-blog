@@ -1,4 +1,8 @@
-:root {
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* :root {
   --primary: #3d5852;
   --secondary: #86938f;
   --tertiary: #5e877f;
@@ -161,4 +165,4 @@ img {
   flex-flow: column wrap;
   align-content: flex-start;
   align-items: center;
-}
+} */
