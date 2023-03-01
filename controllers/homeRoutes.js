@@ -29,6 +29,15 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+//Get dashboard
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    res.render('dashboard', { hello: 'john' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //Get blog by id
 router.get('/blog/:id', async (req, res) => {
   try {
