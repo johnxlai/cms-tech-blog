@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).json(err);
   }
 });
@@ -25,19 +25,12 @@ router.get('/', async (req, res) => {
 //Get blog by id
 router.get('/blog/:id', async (req, res) => {
   try {
-    const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['title'],
-        },
-      ],
-    });
+    const blogData = await Blog.findByPk(req.params.id);
 
     const blog = blogData.get({ plain: true });
     console.log(blog);
 
-    res.render('project', {
+    res.render('blog', {
       ...blog,
       logged_in: req.session.logged_in,
     });
