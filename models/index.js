@@ -3,12 +3,12 @@ const Blog = require('./Blog');
 
 User.hasMany(Blog, {});
 
-// Gallery.hasMany(Painting, {
-//   foreignKey: 'gallery_id',
-// });
+User.hasManyBlog, {
+  foreignKey: 'gallery_id',
+});
 
-// Painting.belongsTo(Gallery, {
-//   foreignKey: 'gallery_id',
-// });
+Painting.belongsTo(Gallery, {
+  foreignKey: 'gallery_id',
+});
 
 module.exports = { User, Blog };
