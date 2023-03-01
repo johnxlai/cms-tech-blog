@@ -46,8 +46,9 @@ router.get('/blog/:id', async (req, res) => {
   }
 });
 
+//If user is login in redirect to home else go to login page
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
