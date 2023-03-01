@@ -15,21 +15,23 @@
 
 </head>
 
-<body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/">Dashboard</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <header>
+<body class="flex flex-col bg-slate-800">
+
+  <header class="p-8 bg-cyan-900">
+      <nav class="text-white gap-6 flex">
+        <a href="/">Home</a>
+        <a href="/">Dashboard</a>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
       <h1 class="text-3xl font-bold underline text-red-500">
         The Tech Blog
       </h1>
   </header>
+
   <main>
     <div class="gallery">
       {{{body}}}
