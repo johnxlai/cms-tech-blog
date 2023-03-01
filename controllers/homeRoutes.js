@@ -4,7 +4,7 @@ const { Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all Blog for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const dbBlogData = await Blog.findAll({
       include: [
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       blogs,
-      loggedIn: req.session.loggedIn,
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     // console.log(err);
@@ -39,7 +39,7 @@ router.get('/blog/:id', async (req, res) => {
 
     res.render('blog', {
       ...blog,
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
