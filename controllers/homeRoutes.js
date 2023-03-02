@@ -47,7 +47,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 //Get blog by id
-router.get('/blog/:id', async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id);
 
