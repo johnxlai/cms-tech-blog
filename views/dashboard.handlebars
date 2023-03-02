@@ -1,6 +1,7 @@
 <div class="flex flex-col w-50">
   <h1 class="text-white">
-    {{hello}}
+    {{id}}
+    {{username}}
   </h1>
 
   <div class="w-full">
@@ -34,6 +35,26 @@
   </div>
 
   <button class="js-new-post-btn btn">+ New Post</button>
+  {{#if blogs.length }}
+    <div>
+      <h3>Post Blogs</h3>
+      {{#each blogs as [blog]}}
+        <div class="row">
+          <div class="col">
+            <p>Blog</p>
+            {{blog.id}}
+            <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+
+          </div>
+
+        </div>
+      {{/each}}
+
+    </div>
+  {{/if}}
+  <div>
+
+  </div>
 </div>
 
 
