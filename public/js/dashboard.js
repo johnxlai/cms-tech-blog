@@ -10,7 +10,7 @@ const newPostHandler = async (e) => {
   // const post_date = date.toLocaleTimeString();
 
   if (title && post_content) {
-    const response = await fetch(`/api/blogs`, {
+    const response = await fetch(`/api/blog`, {
       method: 'POST',
       body: JSON.stringify({ title, post_content }),
       headers: {
