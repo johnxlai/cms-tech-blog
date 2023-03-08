@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
     const blogs = dbBlogData.map((singlePost) =>
       singlePost.get({ plain: true })
     );
+    console.log(blogs);
 
     res.render('homepage', {
       blogs,
@@ -53,7 +54,14 @@ router.get('/dashboard', async (req, res) => {
 //Get blog by id
 router.get('/blog/:id', withAuth, async (req, res) => {
   try {
-    const blogData = await Blog.findByPk(req.params.id);
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
 
     const blog = blogData.get({ plain: true });
     console.log(blog);
