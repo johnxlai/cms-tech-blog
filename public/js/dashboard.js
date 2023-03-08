@@ -12,6 +12,11 @@ function showForm() {
 function hideForm() {
   createPostForm.classList.add('hidden');
 }
+const editBlogTitle = document.querySelector('.edit-blog-title');
+
+//edit blog
+
+//Show form for creation
 newPostBtn.addEventListener('click', showForm);
 
 const newPostHandler = async (e) => {
