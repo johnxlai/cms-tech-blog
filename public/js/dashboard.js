@@ -16,8 +16,7 @@ function hideForm() {
   createPostForm.classList.add('hidden');
 }
 
-//edit blog
-
+//Add blog
 const newPostHandler = async (e) => {
   e.preventDefault();
   const title = document.querySelector('#post-title').value.trim();

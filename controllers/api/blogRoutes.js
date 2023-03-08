@@ -37,7 +37,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 //Updating blog post
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/update/:id', withAuth, async (req, res) => {
   try {
     const updateBlog = await Blog.create({
       ...req.body,
