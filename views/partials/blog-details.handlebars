@@ -11,7 +11,8 @@
             {{ post_content }}
           </p>
           <p class="text-xs text-neutral-500">
-            {{ post_date}}
+            {{format_time createdAt}}
+            {{format_date updatedAt}}
           </p>
         </div>
       </div>

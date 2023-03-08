@@ -8,18 +8,15 @@
           <h5 class="mb-2 text-xl font-medium text-slate-700">
             {{title}}
           </h5>
-
-          <p>{{description}}</p>
           <p class="mb-4 text-base text-neutral-600">
             {{ post_content }}
           </p>
           <p class="text-xs text-neutral-500">
-            {{ post_date}}
           </p>
             <h2>{{id}}</h2>
 
-            <p>{{createdAt}}</p>
-            <p>{{updatedAt}}</p>
+            <p>{{format_time createdAt}}</p>
+            <p>{{format_date updatedAt}}</p>
         </div>
       </div>
     </div>
