@@ -1,6 +1,9 @@
+// Add new post btn
 const newPostBtn = document.querySelector('.js-new-post-btn');
-//form
 const createPostForm = document.querySelector('.create-post-form');
+const deleteFormBtn = document.querySelector('.delete-btn');
+const editBtn = document.querySelector('.edit-btn');
+
 const date = new Date();
 
 //Show new blog form
@@ -12,12 +15,8 @@ function showForm() {
 function hideForm() {
   createPostForm.classList.add('hidden');
 }
-const editBlogTitle = document.querySelector('.edit-blog-title');
 
 //edit blog
-
-//Show form for creation
-newPostBtn.addEventListener('click', showForm);
 
 const newPostHandler = async (e) => {
   e.preventDefault();
@@ -40,7 +39,6 @@ const newPostHandler = async (e) => {
     }
   }
 };
-createPostForm.addEventListener('submit', newPostHandler);
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -58,9 +56,17 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.delete-btn')
-  .addEventListener('click', delButtonHandler);
+const updateFormHandler = async (event) => {
+  e.preventDefault();
+};
 
-const editBtn = document.querySelector('.edit-btn');
-// editBtn.addEventListener('click');
+//Show form for creation
+newPostBtn.addEventListener('click', showForm);
+
+//Create new post
+createPostForm.addEventListener('submit', newPostHandler);
+
+//Delete existing post
+deleteFormBtn.addEventListener('click', delButtonHandler);
+
+editBtn.addEventListener('click', updatePostHandler);
