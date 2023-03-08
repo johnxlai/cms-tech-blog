@@ -36,4 +36,17 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+//Updating blog post
+router.put('/;id', withAuth, async (req, res) => {
+  try {
+    const updateBlog = await Blog.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    res.status(200).json(updateData);
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
