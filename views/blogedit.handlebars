@@ -1,0 +1,58 @@
+<div class="flex flex-col w-50">
+  <h1 class="text-white">
+    User: {{id}}
+    Username: {{username}}
+  </h1>
+
+  <div class="w-full">
+    <form class="create-post-form bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <legend>Create New Post</legend>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="post-title">
+          Title
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="post-title" type="text" placeholder="post-title">
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="post-content">
+          Content
+        </label>
+        <textarea
+          class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 focus:outline-none focus:shadow-outline"
+          id="post-content" name="post-content" placeholder="Add description"></textarea>
+      </div>
+      <div class="flex items-center justify-between">
+        <input
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit" value="Create">
+      </div>
+    </form>
+  </div>
+
+  <button class="js-new-post-btn btn">+ New Post</button>
+  {{#if blogs.length }}
+  <div>
+    <h2 class="text-white mt-8 my-3">Existing Blogs</h2>
+    <div class="flex flex-col gap-3">
+      {{#each blogs as |blog|}}
+      <a href="/blog/{{id}}" class="grow bg-slate-700 p-5 rounded-sm text-white">
+        <div class="">
+          <h3>{{blog.title}}</h3>
+        </div>
+      </a>
+      <button class="btn bg-red-500 text-white delete-btn" data-id="{{blog.id}}">DELETE</button>
+      <button class="btn bg-green-500 text-white edit-btn" data-id="{{blog.id}}">EDIT</button>
+      {{/each}}
+    </div>
+
+  </div>
+  {{/if}}
+  <div>
+
+  </div>
+</div>
+
+
+<script src="./js/dashboard.js"></script>

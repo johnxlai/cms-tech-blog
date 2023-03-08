@@ -75,6 +75,30 @@ router.get('/blog/:id', withAuth, async (req, res) => {
   }
 });
 
+//Edit blog
+router.get('/blogedit/:id', withAuth, async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const blog = blogData.get({ plain: true });
+    console.log(blog);
+
+    res.render('blog', {
+      ...blog,
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //If user is login in redirect to home else go to login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
