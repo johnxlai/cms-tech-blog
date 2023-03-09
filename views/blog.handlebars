@@ -27,15 +27,14 @@
         </textarea>
       <input type="submit" class="btn bg-red-500 text-white">
     </form>
-    <div class="rounded bg-white h-[50px]">
-      <div class="add-commenter"></div>
-      <div class="addComments">
-        {{#each comments as |comment| }}
+    <div class="add-commenter"></div>
+    {{#each comments as |comment| }}
+      <div class="rounded bg-white h-[50px]">
+        <div class="addComments">
             <p>{{ comment.body}}</p>
-        {{/each}}
+        </div>
       </div>
-    </div>
-
+    {{/each}}
 </section>
 
 <script src="../js/blog.js"></script>
