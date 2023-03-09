@@ -39,12 +39,12 @@ router.delete('/:id', withAuth, async (req, res) => {
 //Updating blog post
 router.put('/update/:id', withAuth, async (req, res) => {
   try {
-    const updateBlog = await Blog.update({
-      ...req.body,
-      user_id: req.session.user_id,
+    const updateBlog = await Blog.update(req.body, {
+      where: { id: req.params.id },
     });
     res.status(200).json(updateBlog);
-  } catch (error) {
+  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
