@@ -9,7 +9,7 @@ async function addComment(e) {
   const blogId = document.querySelector('#blog-id').textContent;
 
   if (comment) {
-    const response = await fetch(`/api/blog/comment/${blogId}`, {
+    const response = await fetch(`/api/comment/${blogId}`, {
       method: 'POST',
       body: JSON.stringify({ body: comment }),
       headers: {
