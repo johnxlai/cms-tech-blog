@@ -77,7 +77,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
 });
 
 //Edit blog
-router.get('/blogedit/:id', withAuth, async (req, res) => {
+router.get('/edit-post/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -89,7 +89,7 @@ router.get('/blogedit/:id', withAuth, async (req, res) => {
     });
 
     const blog = blogData.get({ plain: true });
-    res.render('blogedit', {
+    res.render('edit-post', {
       ...blog,
       loggedIn: req.session.logged_in,
     });
