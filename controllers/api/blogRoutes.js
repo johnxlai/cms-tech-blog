@@ -43,7 +43,7 @@ router.put('/update/:id', withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
-    res.status(200).json(updateData);
+    res.status(200).json(updateBlog);
   } catch (error) {
     res.status(500).json(err);
   }
