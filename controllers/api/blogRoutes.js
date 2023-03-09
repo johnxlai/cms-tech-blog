@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -43,6 +43,22 @@ router.put('/update/:id', withAuth, async (req, res) => {
       where: { id: req.params.id },
     });
     res.status(200).json(updateBlog);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//New comment
+router.post('/comment/:id', withAuth, async (req, res) => {
+  try {
+    const newComment = await Comment.create({
+      body: req.body.body,
+      blog_id: req.params.id,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newComment);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

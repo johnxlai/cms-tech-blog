@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
@@ -60,6 +60,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        { model: Comment },
       ],
     });
 

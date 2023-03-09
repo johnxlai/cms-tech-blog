@@ -13,7 +13,7 @@
           </p>
           <p class="text-xs text-neutral-500">
           </p>
-            <h2>{{id}}</h2>
+            <h2 id="blog-id">{{id}}</h2>
 
             <p>{{format_time createdAt}}</p>
             <p>{{format_date updatedAt}}</p>
@@ -30,7 +30,9 @@
     <div class="rounded bg-white h-[50px]">
       <div class="add-commenter"></div>
       <div class="addComments">
-        test
+        {{#each comments as |comment| }}
+            <p>{{ comment.body}}</p>
+        {{/each}}
       </div>
     </div>
 
