@@ -88,9 +88,7 @@ router.get('/blogedit/:id', withAuth, async (req, res) => {
     });
 
     const blog = blogData.get({ plain: true });
-    console.log(blog);
-
-    res.render('blog', {
+    res.render('blogedit', {
       ...blog,
       loggedIn: req.session.logged_in,
     });
