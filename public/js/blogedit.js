@@ -1,10 +1,6 @@
 // Add new post btn
-// const newPostBtn = document.querySelector('.js-new-post-btn');
 const editPostForm = document.querySelector('.edit-post-form');
 const deleteFormBtn = document.querySelector('.delete-btn');
-const editBtn = document.querySelector('.edit-btn');
-
-const date = new Date();
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -47,4 +43,4 @@ const updateFormHandler = async (event) => {
 //Delete existing post
 deleteFormBtn.addEventListener('click', delButtonHandler);
 
-editPostForm.addEventListener('submit', updateFormHandler);
+// editPostForm.addEventListener('click', updateFormHandler);
