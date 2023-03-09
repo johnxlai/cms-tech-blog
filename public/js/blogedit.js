@@ -18,8 +18,8 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const updateFormHandler = async (event) => {
-  event.preventDefault();
+const updateFormHandler = async (e) => {
+  e.preventDefault();
   const blogId = document.querySelector('#blog-id').value;
   const title = document.querySelector('#update-post-title').value.trim();
   const post_content = document.querySelector('#update-post-content').value;
@@ -43,4 +43,4 @@ const updateFormHandler = async (event) => {
 //Delete existing post
 deleteFormBtn.addEventListener('click', delButtonHandler);
 
-// editPostForm.addEventListener('click', updateFormHandler);
+editPostForm.addEventListener('submit', updateFormHandler);
