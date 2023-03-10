@@ -1,11 +1,11 @@
 
 <section class="mx-3 mb-8">
-    <div class="flex flex-col justify-center">
-      <div class="flex rounded-lg bg-white shadow-lg">
+    <div class="flex flex-col justify-center gap-3">
+      <div class="flex flex-col md:flex-row md:flex-wrap rounded-lg bg-white shadow-lg mb-3">
         <img class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
           src="https://picsum.photos/200/300" alt="" />
         <div class="flex flex-col justify-start p-6">
-          <h5 class="mb-2 text-xl font-medium text-slate-700">
+          <h5 class="mb-2 text-xl font-medium text-slate-700 text-uppercase">
             {{title}}
           </h5>
           <p class="mb-4 text-base text-neutral-600">
@@ -13,16 +13,16 @@
           </p>
           <p class="text-xs text-neutral-500">
           </p>
-            <h2 id="blog-id">{{id}}</h2>
-
+            <h2 id="blog-id">Blog: {{id}}</h2>
             <p>{{format_time createdAt}}</p>
             <p>{{format_date updatedAt}}</p>
             <p>Posted by {{ user.username }}</p>
         </div>
       </div>
       {{#if loggedIn}}
-        <div>
-          <form action="" id="comment-form">
+        <div class="text-white">
+          <h4 class="uppercase font-bold mb-3">Add Comments Below</h4>
+          <form action="" id="comment-form" class="flex flex-col">
             <textarea rows="4" cols="50" name="comment" form="comment-form" placeholder="new comment"
               class="comment-details text-black">
                   </textarea>
@@ -30,9 +30,9 @@
           </form>
         </div>
       {{/if}}
-      {{#each comments as |comment| }}
-        <div class="flex flex-col">
-          <div class="addComments rounded bg-white p-5 mb-3">
+      <div class="flex flex-col lg:flex-row lg:flex-wrap gap-3">
+        {{#each comments as |comment| }}
+          <div class="addComments rounded bg-white p-5 mb-3 grow">
             <p>{{ comment.body }}</p>
             <p>{{ comment.user_id }}</p>
             <div class="flex justify-between">
@@ -40,8 +40,8 @@
               <span class="text-xs">{{format_date updatedAt}}</span>
             </div>
           </div>
-        </div>
-      {{/each}}
+        {{/each}}
+      </div>
     </div>
 </section>
 
