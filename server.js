@@ -11,10 +11,10 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3002;
 
-//Add session to expire in 1 min
+//Add session to expire in 15
 const sess = {
   secret: 'Super secret secret',
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 60000 * 15 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
