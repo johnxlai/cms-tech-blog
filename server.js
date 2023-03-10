@@ -11,6 +11,7 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3002;
 
+//Add session to expire in 1 min
 const sess = {
   secret: 'Super secret secret',
   cookie: { maxAge: 60000 },
