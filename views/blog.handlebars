@@ -31,12 +31,15 @@
     {{/if}}
     <div class="add-commenter"></div>
     {{#each comments as |comment| }}
-      <div class="rounded bg-white h-[50px]">
-        <div class="addComments">
-            <p>{{ comment.body}}</p>
+      <div class="flex flex-col">
+        <div class="addComments rounded bg-white h-[50px]">
+            <p>{{ comment.body }}</p>
+            <p>{{ comment.user_id }}</p>
+            <p>{{ format_time createdAt }}</p>
+            <p>{{format_date updatedAt}}</p>
         </div>
       </div>
     {{/each}}
 </section>
 
-<script src="../js/blog.js"></script>
+<script src="../js/comment.js"></script>

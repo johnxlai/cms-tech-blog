@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     const blogs = dbBlogData.map((singlePost) =>
       singlePost.get({ plain: true })
     );
-    console.log(blogs);
+    // console.log(blogs);
 
     res.render('homepage', {
       blogs,
@@ -41,7 +41,7 @@ router.get('/dashboard', async (req, res) => {
       });
 
       const user = userData.get({ plain: true });
-      console.log(user);
+      // console.log(user);
       res.render('dashboard', { ...user, loggedIn: true });
     } else {
       res.render('login');
@@ -65,7 +65,7 @@ router.get('/blog/:id', async (req, res) => {
     });
 
     const blog = blogData.get({ plain: true });
-    console.log(blog);
+    // console.log(blog);
 
     res.render('blog', {
       ...blog,
