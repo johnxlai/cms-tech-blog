@@ -22,11 +22,13 @@
       </div>
 
     </div>
+   {{#if loggedIn}}
     <form action="" id="comment-form">
       <textarea rows="4" cols="50" name="comment" form="comment-form" placeholder="new comment" class="comment-details text-black">
         </textarea>
       <input type="submit" class="btn bg-red-500 text-white">
     </form>
+    {{/if}}
     <div class="add-commenter"></div>
     {{#each comments as |comment| }}
       <div class="rounded bg-white h-[50px]">
