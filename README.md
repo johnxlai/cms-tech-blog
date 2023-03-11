@@ -2,7 +2,8 @@
 ![License Badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
 ## User Story
-AS a manager at an internet retail company I want a back end for e-commerce website that uses the latest technologies. So that my company can compete with other e-commerce companies
+AS a developer who writes about tech I want a CMS-style blog site
+So that I can publish articles, blog posts, and my thoughts and opinions.
 
 ## Description
 * Note: You will need Insomnia Core to check the results of the api routes
