@@ -6,12 +6,11 @@ AS a developer who writes about tech I want a CMS-style blog site
 So that I can publish articles, blog posts, and my thoughts and opinions.
 
 ## Description
-* Note: You will need Insomnia Core to check the results of the api routes
-* This is a functional Express.js API. User will login using their own sql username and password to the env file. Then login to mysql and run the schema file. To seed the database, you will run "npm run seed".
+* This site allows users to sign and create new post or make comments to existing posts relating to tech.
 
-* Start the server by running "npm run watch".
+* Non users can only read the post and cannot comment on existing posts.
 
-* When the user opens the API GET routes in Insomnia Core for categories, products, or tags, the data for each of these routes is displayed in a formatted JSON. When the user uses the API POST, PUT, and DELETE routes in Insomnia Core the user will successfully create, update, and delete data in the database.
+* Logged in users will be logged out if they idle on the site for too long.
 
 
 ## Table of Contents
@@ -27,7 +26,7 @@ So that I can publish articles, blog posts, and my thoughts and opinions.
 ## Usage
 * User can type "npm start" to start the node server. Or use "npm run watch" to use nodemon. To seed the data in the table you will want to run "npm run seed"
 
-* This project uses dotenv, mysql2, express and sequelize packages.
+* This project uses bcrypt, dotenv, mysql2, connect-session-sequelize, express handlebars, express session, handlebars, express and sequelize packages.
 
 
 ## License
@@ -38,7 +37,7 @@ So that I can publish articles, blog posts, and my thoughts and opinions.
 * Feel free to contact via email or github or fork my repo and request for pull request!
 
 ## Tests
-* Some inputs will have vaildation and throw errors if data type aren't meeting the requirements.
+* N/A
 
 ## Questions
 * Please contact me via my [Github Username](https://github.com/johnxlai)
@@ -47,27 +46,8 @@ So that I can publish articles, blog posts, and my thoughts and opinions.
 
 
 # Screenshot
-![Screenshot](assets/images/ecommerce-back-end.png)
+![Screenshot](public/images/the-tech-blog.png)
 ## Repo
-https://github.com/johnxlai/ecommerce-back-end
-## WalkThrough Video
-https://drive.google.com/file/d/1C44gFf2sO2jV4oR0d-8h5hM0MwM11uvS/view
-
-
-
-
-
-
-
-## Acceptance Criteria
-GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete data in my database
+https://github.com/johnxlai/cms-tech-blog
+## Live App
+https://thawing-fortress-19300.herokuapp.com/
