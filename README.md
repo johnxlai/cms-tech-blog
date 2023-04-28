@@ -50,4 +50,4 @@ So that I can publish articles, blog posts, and my thoughts and opinions.
 ## Repo
 https://github.com/johnxlai/cms-tech-blog
 ## Live App
-https://thawing-fortress-19300.herokuapp.com/
+https://cms-tech-blog-new.herokuapp.com/
